@@ -1,24 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route,Switch} from 'react-router-dom';
+import Welcome from './components/welcome';
+import Classroom from './components/classroom';
+import Navigation from './components/navigation';
+import Inclusion from './components/inclusion';
+import Lesson from './components/lesson_samples';
+
+import classes from './colors.module.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div>
+  
+    {/* <Welcome /> */}
+
+   <Navigation />
+ <Switch>  
+
+
+    <Route path='/' exact>
+      <Welcome />
+
+    </Route>
+
+    <Route path='/inclusion'>
+      <Inclusion />
+
+    </Route>
+
+    <Route path='/classroom'>
+      <Classroom />
+
+    </Route>
+
+    <Route path='/lessons'>
+      <Lesson />
+
+    </Route>
+
+    </Switch>
+
+  </div>
+
   );
 }
 
